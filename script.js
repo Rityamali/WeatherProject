@@ -3,6 +3,8 @@ const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q='
 const searchBox = document.querySelector(".search input")
 const searchBtn = document.querySelector(".search button")
 const weatherIcon = document.querySelector(".weather-icon")
+let link = document.querySelector(".name span")
+
 
 async function checkWeather(city) {
     const responce = await fetch(apiUrl + city + `&appid=${apiKey}`);
@@ -46,6 +48,10 @@ async function checkWeather(city) {
 
 
 }
+
+link.addEventListener("click" , ()=>{
+    location.href = "https://github.com/Rityamali"
+})
 
 searchBtn.addEventListener("click", () => {
     checkWeather(searchBox.value)
